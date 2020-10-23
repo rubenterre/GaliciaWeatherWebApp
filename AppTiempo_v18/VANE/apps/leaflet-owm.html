@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaflet-OpenWeatherMap-GaliciaWeather</title>
+    <meta charset="utf-8" />
+    <style>
+        #cabecera {
+            margin: 0px;
+            background: #212121;
+            color: white;
+            width: 100%;
+            height: 56px;
+
+        }
+
+
+        .titulo{
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 18px;
+            display: inline-flex;
+            justify-content: center;
+            padding-left: 35%;
+            vertical-align: middle;
+            padding-bottom: 20px;
+        }
+
+        html, body, #map {
+            height: 94vh;
+            margin: 0px;
+        }
+
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../leaflet/leaflet.css" />
+    <link rel="stylesheet" href="css/leaflet-owm.css" />
+    <link rel="stylesheet" href="css/iconLayers.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+</head>
+<body>
+    <div id="cabecera">
+        <nav>
+            <div class="nav-wrapper">
+                <a href="../../index.html" style="padding-left: 10px;"><i
+                        class="material-icons" style="color: white; padding-top: 10px; font-size: 30px;">keyboard_arrow_left</i></a>
+            <p class="titulo">Radar</p>
+                    </div>
+        </nav>
+    </div>
+    <div id="map"></div>
+
+ 
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="../leaflet/leaflet-src.js"></script>
+    <script src="js/leaflet-owm.js"></script>
+    <script src="js/iconLayer.js"></script>
+    <script>
+        var providers = {};
+
+        providers['OSM'] = {
+            title: 'OSM',
+            icon: 'img/layers-osm.png',
+            layer: L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                maxZoom: 18,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+            })
+        };
+
+       /* providers['Satellite'] = {
+            title: 'MODIS',
+            icon: 'img/layers-satellite.png',
+            layer: L.tileLayer('http://{s}.sat.owm.io/sql/{z}/{x}/{y}?select=b1,b4,b3&from=modis&order=last&color=modis&appid=3e867330616c39fa60d18a1af5d82f16', {
+                maxZoom: 19,
+                attribution: '&copy; <a href="http://owm.io">VANE</a>'
+            })
+        };
+        */
+
+
+    </script>
+    <script>
+        var map = L.map('map').setView([40, -8], 5);
+
+        
+        //http://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=d9cfe451d5a775abaf178aec4951b4b0
+
+        var Temp = L.tileLayer('http://tile.openweathermap.org/map/temp_new/{z}/{x}/{y}.png?appid=3e867330616c39fa60d18a1af5d82f16', {
+            maxZoom: 18,
+            attribution: '&copy; <a href="http://owm.io">VANE</a>',
+            id: 'temp'
+        }),
+
+        Precipitation = L.tileLayer('http://tile.openweathermap.org/map/precipitation_new/{z}/{x}/{y}.png?appid=3e867330616c39fa60d18a1af5d82f16', {
+            maxZoom: 18,
+            attribution: '&copy; <a href="http://owm.io">VANE</a>'
+        }),
+
+        Wind = L.tileLayer('http://tile.openweathermap.org/map/wind_new/{z}/{x}/{y}.png?appid=3e867330616c39fa60d18a1af5d82f16', {
+            maxZoom: 18,
+            attribution: '&copy; <a href="http://owm.io">VANE</a>'
+        }),
+
+        Pressure = L.tileLayer('http://tile.openweathermap.org/map/pressure_new/{z}/{x}/{y}.png?appid=3e867330616c39fa60d18a1af5d82f16', {
+            maxZoom: 18,
+            attribution: '&copy; <a href="http://owm.io">VANE</a>'
+        }),
+
+
+        Clouds = L.tileLayer('http://tile.openweathermap.org/map/clouds_new/{z}/{x}/{y}.png?appid=3e867330616c39fa60d18a1af5d82f16', {
+            maxZoom: 18,
+            attribution: '&copy; <a href="http://owm.io">VANE</a>'
+        });
+
+        var owm = new L.OWMLayer({key: 'b1b15e88fa797225412429c1c50c122a1'});
+        map.addLayer(owm);
+
+        Temp.addTo(map);
+
+        var overlays = {"Temperatura": Temp, "Precipitacións": Precipitation, "Nubes": Clouds, "Presión": Pressure, "Vento": Wind};
+        L.control.layers(overlays, null, {collapsed:false}).addTo(map);
+
+        var layers = [];
+            for (var providerId in providers) {
+                layers.push(providers[providerId]);
+            }
+
+        L.control.iconLayers(layers).addTo(map);
+    </script>
+
+
+</body>
+</html>

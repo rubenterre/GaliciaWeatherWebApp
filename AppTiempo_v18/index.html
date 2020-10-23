@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#0D47A1">
+
+  <link rel="icon" href="images/favicon.png">
+  <title>Tempo App</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="css/materialize.css">
+  <link rel="stylesheet" href="css/line-awesome.css">
+  <link rel="stylesheet" href="css/line-awesome-font-awesome.css">
+  <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body>
+
+
+  <!-- Barra baja Menú -->
+
+  <div class="nav-wrapper  barrabaja">
+    <ul class="navBaja">
+      <li class="creditos"><a href="about.html"><i class=" material-icons iconos_barra ">info</i></a>
+        <p class="tit_menu">Información</p>
+      </li>
+      <li class="mapas"><a href="VANE/apps/leaflet-owm.html"><i
+            class=" material-icons iconos_barra">track_changes</i></a>
+        <p class="tit_menu">Radar</p>
+      </li>
+      <li class="inicio"><a href="index.html"><i class=" material-icons iconos_inicio">home</i></a>
+        <p class="tit_menu">Inicio</p>
+      </li>
+      <li class="ciudades"><a href="favoritos.html"><i class=" material-icons iconos_barra">location_city</i></a>
+        <p class="tit_menu">Cidades</p>
+      </li>
+      <li class="busquedas"><a href="buscador_1.html"><i class=" material-icons iconos_barra ">search</i></a>
+        <p class="tit_menu">Procurar</p>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+
+  <!-- Loader -->
+
+  <div id="loading">
+    <img id="loading-image" src="images/cargando2.gif" alt="Loading..." />
+  </div>
+
+
+  <!-- O Tempo -->
+
+  <div class="center">
+
+    <div class="white-text PanelPrincipal">
+      <div class="container">
+        <div class="row">
+          <div class="notification"> </div>
+          <div class="weather-container">
+            <div class="col s12 location">
+              <p>-</p>
+            </div>
+            <div class="col s12 fechaHoy">
+              <p></p>
+            </div>
+            <div class="col s12 temperature-value center">
+              <p>- <sub>°</sub></p>
+            </div>
+            <div class="col s12 weather-icon center">
+              <img src="images/cargando2.gif" alt="">
+            </div>
+          </div>
+          <div class="weather-datos">
+            <div class="col s12 temperature-description center">
+              <p> - </p>
+            </div>
+            <div class="col s12 frases">
+              <p></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="caja_dias">
+
+      <div class="dias_venideros">
+        <div class="mas_una_hora horasDestacadas">
+          <p></p>
+        </div>
+        <div class="weather-icon-mas_una center">
+          <img src="images/cargando2.gif" alt="">
+        </div>
+        <div class="temp-mas_una">
+          <p></p>
+        </div>
+
+      </div>
+
+      <div class="dias_venideros">
+        <div class="mas_dos_hora horasDestacadas">
+          <p></p>
+        </div>
+
+        <div class="weather-icon-mas_dos center">
+          <img src="images/cargando2.gif" alt="">
+        </div>
+        <div class="temp-mas_dos">
+          <p></p>
+        </div>
+
+      </div>
+
+      <div class="dias_venideros">
+        <div class="mas_tres_hora horasDestacadas">
+          <p></p>
+        </div>
+
+        <div class="weather-icon-mas_tres center">
+          <img src="images/cargando2.gif" alt="">
+        </div>
+        <div class="temp-mas_tres">
+          <p></p>
+        </div>
+
+      </div>
+
+      <div class="dias_venideros">
+        <div class="mas_cuatro_hora horasDestacadas">
+          <p></p>
+        </div>
+
+        <div class=" weather-icon-mas_cuatro center">
+          <img src="images/cargando2.gif" alt="">
+        </div>
+        <div class=" temp-mas_cuatro">
+          <p></p>
+        </div>
+
+      </div>
+
+      <div class="dias_venideros">
+        <div class="mas_cinco_hora horasDestacadas">
+          <p></p>
+        </div>
+
+        <div class="weather-icon-mas_cinco center">
+          <img src="images/cargando2.gif" alt="">
+        </div>
+        <div class="temp-mas_cinco">
+          <p></p>
+        </div>
+
+      </div>
+
+      <div class="dias_venideros">
+        <div class="mas_seis_hora horasDestacadas">
+          <p></p>
+        </div>
+
+        <div class=" weather-icon-mas_seis center">
+          <img src="images/cargando2.gif" alt="">
+        </div>
+        <div class=" temp-mas_seis">
+          <p></p>
+        </div>
+
+      </div>
+
+      <div class="dias_venideros">
+        <div class="mas_siete_hora horasDestacadas">
+          <p></p>
+        </div>
+
+        <div class=" weather-icon-mas_siete center">
+          <img src="images/cargando2.gif" alt="">
+        </div>
+        <div class="temp-mas_siete">
+          <p></p>
+        </div>
+
+      </div>
+
+      <div class=" dias_venideros">
+        <div class="mas_ocho_hora horasDestacadas">
+          <p></p>
+        </div>
+
+        <div class=" weather-icon-mas_ocho center">
+          <img src="images/cargando2.gif" alt="">
+        </div>
+        <div class="temp-mas_ocho">
+          <p></p>
+        </div>
+
+      </div>
+
+      <div class=" dias_venideros">
+        <div class="mas_nueve_hora horasDestacadas">
+          <p></p>
+        </div>
+
+        <div class=" weather-icon-mas_nueve weather-icon_hora_general center">
+          <img src="images/cargando2.gif" alt="">
+        </div>
+        <div class="temp-mas_nueve">
+          <p></p>
+        </div>
+
+      </div>
+
+      <div class=" dias_venideros">
+        <div class="mas_diez_hora horasDestacadas">
+          <p></p>
+        </div>
+
+        <div class=" weather-icon-mas_diez weather-icon_hora_general center">
+          <img src="images/cargando2.gif" alt="">
+        </div>
+        <div class="temp-mas_diez">
+          <p></p>
+        </div>
+
+      </div>
+
+      <div class=" dias_venideros">
+        <div class="mas_once_hora horasDestacadas">
+          <p></p>
+        </div>
+
+        <div class=" weather-icon-mas_once weather-icon_hora_general center">
+          <img src="images/cargando2.gif" alt="">
+        </div>
+        <div class="temp-mas_once">
+          <p></p>
+        </div>
+
+      </div>
+
+      <div class=" dias_venideros">
+        <div class="mas_doce_hora horasDestacadas">
+          <p></p>
+        </div>
+
+        <div class=" weather-icon-mas_doce weather-icon_hora_general center">
+          <img src="images/cargando2.gif" alt="">
+        </div>
+        <div class="temp-mas_doce">
+          <p></p>
+        </div>
+
+      </div>
+
+      <div class=" dias_venideros">
+        <div class="mas_trece_hora horasDestacadas">
+          <p></p>
+        </div>
+
+        <div class=" weather-icon-mas_trece  weather-icon_hora_general center">
+          <img src="images/cargando2.gif" alt="">
+        </div>
+        <div class="temp-mas_trece">
+          <p></p>
+        </div>
+
+      </div>
+
+      <div class=" dias_venideros">
+        <div class="mas_catorce_hora horasDestacadas">
+          <p></p>
+        </div>
+
+        <div class=" weather-icon-mas_catorce weather-icon_hora_general center">
+          <img src="images/cargando2.gif" alt="">
+        </div>
+        <div class="temp-mas_catorce">
+          <p></p>
+        </div>
+
+      </div>
+
+      <div class=" dias_venideros">
+        <div class="mas_quince_hora horasDestacadas">
+          <p></p>
+        </div>
+
+        <div class=" weather-icon-mas_quince weather-icon_hora_general center">
+          <img src="images/cargando2.gif" alt="">
+        </div>
+        <div class="temp-mas_quince">
+          <p></p>
+        </div>
+
+      </div>
+
+      <div class=" dias_venideros">
+        <div class="mas_dieciseis_hora horasDestacadas">
+          <p></p>
+        </div>
+
+        <div class=" weather-icon-mas_dieciseis weather-icon_hora_general center">
+          <img src="images/cargando2.gif" alt="">
+        </div>
+        <div class="temp-mas_dieciseis">
+          <p></p>
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="col s12 datosTecnicosCard">
+
+      <div class="container">
+        <div class="pronos_horas">
+          <div class="row">
+
+            <div class="col s12 mas_una prox_horas centrarItems">
+              <div class="col s4 tit-diario">
+                <p>Mañá</p>
+
+                <div class="tit-mes">
+                  <p></p>
+                </div>
+              </div>
+              <div class="col s4 weather-icon-manana center">
+                <img src="images/cargando2.gif" alt="">
+              </div>
+              <div class="col s2 tempmax-manana temp_font">
+                <p></p>
+              </div>
+              <div class="col s2 tempmin-manana temp_font">
+                <p></p>
+              </div>
+
+            </div>
+            <div class="col s12 mas_dos prox_horas centrarItems">
+              <div class="col s4 tit-pasado">
+                <p></p>
+                <div class="tit-mes_pasado">
+                  <p></p>
+                </div>
+              </div>
+              <div class="col s4 weather-icon-pasado center">
+                <img src="images/cargando2.gif" alt="">
+              </div>
+              <div class="col s2 tempmax-pasado temp_font">
+                <p></p>
+              </div>
+              <div class="col s2 tempmin-pasado temp_font">
+                <p></p>
+              </div>
+            </div>
+            <div class="col s12 mas_tres prox_horas centrarItems">
+              <div class="col s4 tit-en_dos_dias">
+                <p></p>
+                <div class="tit-mes_en_dos_dias">
+                  <p></p>
+                </div>
+              </div>
+              <div class="col s4 weather-icon-en_dos_dias center">
+                <img src="images/cargando2.gif" alt="">
+              </div>
+              <div class="col s2 tempmax-en_dos_dias temp_font">
+                <p></p>
+              </div>
+              <div class="col s2 tempmin-en_dos_dias temp_font">
+                <p></p>
+              </div>
+            </div>
+            <div class="col s12 mas_cuatro prox_horas centrarItems">
+              <div class="col s4 tit-en_tres_dias">
+                <p></p>
+                <div class="tit-mes_en_tres_dias">
+                  <p></p>
+                </div>
+              </div>
+              <div class="col s4 weather-icon-en_tres_dias center">
+                <img src="images/cargando2.gif" alt="">
+              </div>
+              <div class="col s2 tempmax-en_tres_dias temp_font">
+                <p></p>
+              </div>
+              <div class="col s2 tempmin-en_tres_dias temp_font">
+                <p></p>
+              </div>
+            </div>
+            <div class="col s12 mas_cinco prox_horas centrarItems">
+              <div class="col s4 tit-en_cuatro_dias">
+                <p></p>
+                <div class="tit-mes_en_cuatro_dias">
+                  <p></p>
+                </div>
+              </div>
+              <div class="col s4 weather-icon-en_cuatro_dias center">
+                <img src="images/cargando2.gif" alt="">
+              </div>
+              <div class="col s2 tempmax-en_cuatro_dias temp_font">
+                <p></p>
+              </div>
+              <div class="col s2 tempmin-en_cuatro_dias temp_font">
+                <p></p>
+              </div>
+            </div>
+            <div class="col s12 mas_seis prox_horas centrarItems">
+              <div class="col s4 tit-en_cinco_dias">
+                <p></p>
+                <div class="tit-mes_en_cinco_dias">
+                  <p></p>
+                </div>
+              </div>
+              <div class="col s4 weather-icon-en_cinco_dias center">
+                <img src="images/cargando2.gif" alt="">
+              </div>
+              <div class="col s2 tempmax-en_cinco_dias temp_font">
+                <p></p>
+              </div>
+              <div class="col s2 tempmin-en_cinco_dias temp_font">
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="PanelDatosInicio">
+          <div class="container">
+            <div class="row">
+              <div class="col s6 DatosEsencialesInicio">
+                <img src="images/temperMax.png" width="20%" alt="Temperatura máxima">
+                <p class="tit_icon">
+                  Temp. Máx.
+                </p>
+                <div class="chip tempmax">
+                  <p></p>
+                </div>
+              </div>
+              <div class="col s6 DatosEsencialesInicio">
+                <img src="images/temperMin.png" width="20%" alt="Temperatura mínima">
+                <p class="tit_icon">
+                  Temp. Min.
+                </p>
+                <div class="chip tempmin">
+                  <p></p>
+                </div>
+              </div>
+              <div class="col s6 DatosEsenciales">
+                <img src="images/wind.png" width="20%" alt="Velocidad del viento">
+                <p class="tit_icon">
+                  Vento
+                </p>
+                <div class="chip wind">
+                  <p></p>
+                </div>
+              </div>
+              <div class="col s6 DatosEsenciales">
+                <img src="images/feel_like.png" width="20%" class="center" alt="Sensación térmica">
+                <p class="tit_icon">
+                  Sensación térmica
+                </p>
+                <div class="chip feel-like">
+                  <p></p>
+                </div>
+              </div>
+              <div class="col s6 DatosEsenciales">
+                <img src="images/humidity.png" width="20%" alt="Humedad">
+                <p class="tit_icon">
+                  Humedad
+                </p>
+                <div class="chip humidity">
+                  <p></p>
+                </div>
+              </div>
+              <div class="col s6 DatosEsenciales">
+                <img src="images/pressure.png" width="20%" alt="Presión atmosférica">
+                <p class="tit_icon">
+                  Presión
+                </p>
+                <div class="chip pressure">
+                  <p></p>
+                </div>
+              </div>
+              <div class="col s6 DatosEsenciales">
+                <img src="images/uvi.png" width="20%" alt="Índice UVI">
+                <p class="tit_icon">
+                  Índice UV
+                </p>
+                <div class="chip uvi">
+                  <p></p>
+                </div>
+              </div>
+              <div class="col s6 DatosEsenciales">
+                <img src="images/visibilidad.png" width="20%" alt="Visibilidad">
+                <p class="tit_icon">
+                  Visibilidad
+                </p>
+                <div class="chip visibilidad">
+                  <p></p>
+                </div>
+              </div>
+              <div class="col s6">
+                <img src="images/sunrise.png" width="20%" alt="Amanecer">
+                <div class="chip sunrise">
+                  <p></p>
+                </div>
+              </div>
+              <div class="col s6">
+                <img src="images/sunset.png" width="20%" alt="Ocaso">
+                <div class="chip sunset">
+                  <p></p>
+                </div>
+              </div>
+
+              <div class="white-text">
+                <div class="container">
+                  <div class="row">
+                    <div class="fases_lunares col s12">
+
+                      <div id="ex2"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <hr
+      style="border-top: 1px solid rgba(255, 255, 255, 0.5); border-bottom: 0px; border-left: 0px; border-right: 0px; padding-bottom:10px;">
+    <a href="https://www.rubenterre.com"><img src="images/Ruben_Terre_Logo_blanco_131119.svg" class="logo_rubenterre"
+        width="20%" alt=""> </a>
+
+  </footer>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/app2.js"></script>
+  <script src="js/fases_lunares.js"></script>
+
+
+  <script>
+    // Initialize collapse button
+    $(".button-collapse").sideNav();
+
+
+    // Loader
+
+    function load() {
+
+      document.getElementById('loading').style.display = 'none';
+    }
+
+    window.onload = setTimeout(load, 2000);
+  </script>
+</body>
+
+</html>
